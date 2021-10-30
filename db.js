@@ -46,10 +46,16 @@ var StuffSchema = new mongoose.Schema({
     zhongdui: String,
     dadui: String
 });
+var UserSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+    role: String
+});
 
 //model (模型)：为了使用定义好的Schema，我们需要把blogSchema转换成我们可以使用的model(其实是把Schema编译成model，所以对于Schema的一切定义都要在compile之前完成)。也就是说model才是我们可以进行操作的handle。
 mongoose.model('Stuff', StuffSchema);//将该Schema发布为Model
 mongoose.model('Punish', PunishSchema);
 mongoose.model('Inspect', InspectSchema);
+mongoose.model('User', UserSchema),
 
 module.exports = mongoose;
